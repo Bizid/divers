@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="messages.css">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <div>
+      <h2>Определите, пуст ли объект</h2>
+      <p>
+        Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false — если хоть одно свойство есть.
+      </p>
+    </div>
+
+    <script>
+    function isEmpty(obj) {
+      var counter = 0;
+
+      for (var key in obj) {
+        counter++;
+      }
+      if(counter > 0) {
+        return false;
+      } else {
+        return true;
+      }
+      
+    }      
+    </script>
+
+    <div>
+      <h2>Сумма свойств</h2>
+      <p>
+        Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+Если объект пустой, то результат должен быть 0
+      </p>
+    </div>
+
+    <script>
+    function objSum(obj) {
+      var result = 0;
+
+      for (var key in obj) {
+        result = result + obj[key];
+      }
+      return result;
+      
+    }      
+    </script>
+
+
+
+    <div>
+      <h2>Свойство с наибольшим значением</h2>
+      <p>
+        Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+
+Если объект пустой, то пусть он выводит «нет сотрудников».
+      </p>
+    </div>
+
+    <script>
+    function objMax(obj) {
+      var result = 0;
+      var tempKey;
+
+      for (var key in obj) {
+        if (result < obj[key]) {
+          result =  obj[key];
+          tempKey = key;
+        }
+        
+      }
+      return tempKey;
+      
+    }      
+    </script>
+
+
+
+<div>
+      <h2>Получить последний элемент массива</h2>
+      <p>
+        Как получить последний элемент из произвольного массива?
+
+У нас есть массив goods. Сколько в нем элементов — не знаем, но можем прочитать из goods.length.
+
+Напишите код для получения последнего элемента goods.
+      </p>
+    </div>
+
+    <script>
+    function lastElement(array) {
+      
+      return array.pop();
+      
+    }      
+    </script>
+
+
+<div>
+      <h2>Добавить новый элемент в массив</h2>
+      <p>
+        Как добавить элемент в конец произвольного массива?
+
+У нас есть массив goods. Напишите код для добавления в его конец значения «Компьютер».
+      </p>
+    </div>
+
+    <script>
+      goods[goods.length] = 'Компьютер';   
+    </script>
+
+<div>
+      <h2>Добавить класс в строку</h2>
+      <p>
+        В объекте есть свойство className, которое содержит список «классов» – слов, разделенных пробелом:
+      </p>
+    </div>
+
+    <script>
+    var obj = {
+  className: 'open menu'
+}
+    function addClass(obj, cls) {
+      var arr = obj.className.split(' ');
+
+      if (arr.indexOf(cls) == -1 ){
+        arr =  arr.concat(cls);
+        obj.className = arr.join(' ').trim();
+      }
+      
+    }  
+    </script>
+
+
+<div>
+      <h2>Функция removeClass</h2>
+      <p>
+        У объекта есть свойство className, которое хранит список «классов» – слов, разделенных пробелами:
+      </p>
+    </div>
+
+    <script>
+    function removeClass(obj, cls){
+      var arr = obj.className.split(' ');
+      if (arr.indexOf(cls) != -1 ){
+        arr.splice(arr.indexOf(cls), 1);
+        obj.className = arr.join(' ').trim();
+      }
+    }
+    </script>
+
+    <div>
+      <h2>Сортировать в обратном порядке</h2>
+      <p>
+        Как отсортировать массив чисел в обратном порядке?
+      </p>
+    </div>
+
+    <script>
+    function revsort(arr){
+      return arr.sort().reverse();
+    }
+    </script>
+
+
+
+
+
+
+
+  </body>
+</html>
