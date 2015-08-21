@@ -15,18 +15,12 @@
 
     <script>
     function isEmpty(obj) {
-      var counter = 0;
-
       for (var key in obj) {
-        counter++;
-      }
-      if(counter > 0) {
         return false;
-      } else {
-        return true;
       }
-      
-    }      
+
+      return true;
+    }  
     </script>
 
     <div>
@@ -165,6 +159,28 @@
     }
     </script>
 
+
+
+
+ <div>
+      <h2>Spam</h2>
+      <p>
+        Как отсортировать массив чисел в обратном порядке?
+      </p>
+    </div>
+
+    <script>
+    var spamList = ['viagra', 'xxx'];
+
+    function containsSpam(str) {
+      var newStr = str.toLowerCase();
+      var containsViagra = newStr.indexOf('viagra') !== -1;
+      var containsXXX = newStr.indexOf('xxx') !== -1;
+      
+      return containsViagra || containsXXX;
+
+    }
+    </script>
 
 
 
