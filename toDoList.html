@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+</head>
+<body>
+<div id="todolist">
+    <div class="header"><h2>My list</h2></div>
+    <div class="content">
+        <ul>
+            <li><input type="checkbox" /> <label>Clean</label></li>
+            <li><input type="checkbox" /> <label>Go home</label></li>
+            <li><input type="checkbox" /> <label>Watch tv</label></li>
+            <li><input type="checkbox" /> <label>Examin</label></li>
+            <li><input type="checkbox" /> <label>Game</label></li>
+            <li><input type="checkbox" /> <label>Check internet</label></li>
+        </ul>
+
+
+    </div>
+</div>
+
+<style>
+    #todolist {
+        background: #99784c;
+        width: 800px;
+        margin: 0 auto;
+        padding: 5px;
+        border: 1px solid #000;
+        overflow: hidden;
+    }
+
+    .content {
+        color:#fff;
+        margin-left: 5px;
+        float: left;
+    }
+    .content ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .content ul li{
+        margin-bottom: 10px;
+    }
+    .content ul li.checked label{
+        text-decoration: line-through;
+    }
+    .content ul li label{}
+
+
+</style>
+<script>
+    var checkedItem = [];
+    document.addEventListener('click', function(e) {
+        var nextElem = next(e.target.nextSibling);
+        var nextValue = nextElem.innerHTML;
+        if(e.target.checked){
+            e.target.parentNode.className += " checked";
+            checkedItem.push(nextValue);
+        }else{
+            e.target.parentNode.className = "";
+            var index = checkedItem.indexOf(nextValue);
+            if (index > -1) {
+                checkedItem.splice(index, 1);
+            }
+        }
+    });
+
+    function next(elem) {
+        do {
+            elem = elem.nextSibling;
+        } while (elem && elem.nodeType !== 1);
+        return elem;
+    }
+
+</script>
+</body>
+</html>
