@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+</head>
+<body>
+<div id="accordion">
+    <div class="header"><a href="#" onclick="openContent(this)">+</a><h2>Title here</h2></div>
+    <div class="content">
+        <p>Lorem ipsum dollor ...</p>
+    </div>
+</div>
+
+<style>
+    #accordion {
+        background: #99784c;
+        width: 400px;
+        margin: 0 auto;
+        padding: 5px;
+        border: 1px solid #000;
+        overflow: hidden;
+    }
+    #accordion a{
+        color: white;
+        font-size: 16px;
+        float: left;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        text-decoration: none;
+    }
+    .content {
+        color:#fff;
+        margin-left: 5px;
+        float: left;
+        display: none;
+    }
+
+</style>
+<script>
+    function next(elem) {
+        do {
+            elem = elem.nextSibling;
+        } while (elem && elem.nodeType !== 1);
+        return elem;
+    }
+
+
+    function openContent(el){
+        var nextElem = next(el.parentNode.nextSibling);
+
+        if (nextElem){
+            if(nextElem.style.display != 'block' ){
+                nextElem.style.display = 'block';
+            }
+            else{
+                nextElem.style.display = 'none';
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
